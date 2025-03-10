@@ -1,8 +1,14 @@
+import datetime
 from slack_notifier import SlackNotifier
 from slack_message_formatter import SlackMessageFormatter
 from restaurant_info_fetcher import RestaurantInfoFetcher
 
 if __name__ == "__main__":
+
+    # 오늘 요일이 토요일(5) 또는 일요일(6)인 경우 종료
+    if datetime.datetime.today().weekday() >= 5:
+        print("오늘은 주말입니다. 프로그램을 종료합니다.")
+        exit()
 
     slack_notifier = SlackNotifier()
     slack_message_formatter = SlackMessageFormatter()

@@ -1,0 +1,4 @@
+requests
+slack_sdk
+beautifulsoup4
+python-dotenv

@@ -44,7 +44,7 @@ class SlackMessageFormatter:
         if restaurant_info['review']:
             block.append({"type": "divider"})
             reviews = "\n".join(
-                [f"{self.number_emoji(i + 1)} {self.clean_html(review)}\n\n" for i, review in
+                [f"{self.number_finger_emoji(i + 1)} {self.clean_html(review)}\n\n" for i, review in
                  enumerate(restaurant_info['review'])])
             block.append({
                 "type": "section",
@@ -66,7 +66,7 @@ class SlackMessageFormatter:
         return "⭐" * full_stars
 
     def _title_number(self, n, m):
-        return f"{self.number_finger_emoji(n)} - {self.number_emoji(m)}"
+        return f"{self.number_emoji(n)} - {self.number_emoji(m)}"
 
     @staticmethod
     def number_emoji(n):

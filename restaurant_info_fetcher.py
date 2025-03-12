@@ -22,6 +22,7 @@ class RestaurantInfoFetcher:
         음식점 정보를 원하는 형태로 가공
         """
         return {
+            "id": restaurant.get("id") or "알 수 없음",  # 가게 식별자
             "name": restaurant.get("name") or "알 수 없음",  # 가게 이름
             "category": restaurant.get("category") or "카테고리 없음",  # 카테고리
             "roadAddress": restaurant.get("roadAddress") or "주소 없음",  # 주소

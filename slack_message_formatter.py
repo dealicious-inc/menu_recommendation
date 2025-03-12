@@ -19,7 +19,7 @@ class SlackMessageFormatter:
                 "type": "section",
                 "text": {
                     "type": "mrkdwn",
-                    "text": f"*<{restaurant_info['routeUrl']}|{restaurant_info['name']}>* | {restaurant_info['category']}"
+                    "text": f"*<https://map.naver.com/p/entry/place/{restaurant_info['id']}|{restaurant_info['name']}>* | {restaurant_info['category']}"
                 }
             },
             {
@@ -27,6 +27,7 @@ class SlackMessageFormatter:
                 "text": {
                     "type": "mrkdwn",
                     "text": f"📍 주소: {restaurant_info['roadAddress']}\n\n"
+                            f"📏 거리: : {restaurant_info['distance']}\n\n"
                             f"📌 카테고리: {restaurant_info['category']}\n\n"
                             f"💰 가격대: {restaurant_info['priceCategory']}\n\n"
                             f"⭐ 평점: {self.star_pattern(float(restaurant_info['visitorReviewScore']))} ({restaurant_info['visitorReviewScore']})\n\n"
